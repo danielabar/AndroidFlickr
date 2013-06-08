@@ -31,8 +31,7 @@ public class MainActivity extends Activity {
     	if (results != null && results.size() > 0) {
     		ListAdapter adapter = new ArrayAdapter<SearchResult>(this, android.R.layout.simple_list_item_1, results);
 			searchResults.setAdapter(adapter);
-    	} else {
-    	}
+    	} 
     }
 
 	@Override

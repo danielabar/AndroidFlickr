@@ -10,6 +10,8 @@ public class SearchResult implements Serializable {
 
     private String title;
     private String authorId;
+    private String imgUrl;
+	private String flickrUrl;
 
     public String getTitle() {
         return title;
@@ -27,7 +29,23 @@ public class SearchResult implements Serializable {
         this.authorId = text;
     }
 
-    @Override
+    public String getImgUrl() {
+		return imgUrl;
+	}
+
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
+	}
+
+	public String getFlickrUrl() {
+		return flickrUrl;
+	}
+
+	public void setFlickrUrl(String flickrUrl) {
+		this.flickrUrl = flickrUrl;
+	}
+
+	@Override
     public String toString() {
         return String.format(OUTPUT_FORMAT, getTitle(), getAuthorId());
     }

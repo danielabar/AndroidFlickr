@@ -7,10 +7,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import edu.danib.flickrapp.model.SearchResult;
-
 import android.text.TextUtils;
 import android.util.Log;
+import edu.danib.flickrapp.model.SearchResult;
 
 
 public class FlickrService {
@@ -42,6 +41,8 @@ public class FlickrService {
                 JSONObject result = jsonArray.getJSONObject(i);
                 searchResult.setTitle(result.getString("title"));
                 searchResult.setAuthorId(result.getString("author_id"));
+                searchResult.setFlickrUrl(result.getString("link"));
+                searchResult.setImgUrl(result.getJSONObject("media").getString("m"));
                 results.add(searchResult);
             }
 

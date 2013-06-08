@@ -34,15 +34,26 @@ public class HttpService {
 			url = new URL(urlString);
 			urlConnection = (HttpURLConnection) url.openConnection();
 			InputStream inputStream = new BufferedInputStream(urlConnection.getInputStream());
-			String convertStreamToString = convertStreamToString(inputStream);
-			Log.i(HttpService.class.toString(), convertStreamToString);
-			return convertStreamToString;
+			String result = extractResultFromStream(inputStream);
+			Log.i(HttpService.class.toString(), result);
+			return result;
+			
 		} catch (Exception e) {
 			Log.e(HttpService.class.toString(), "doGet", e);
 		} finally {
 			urlConnection.disconnect();
 		}
 		return null;
+	}
+
+	private String extractResultFromStream(InputStream inputStream) {
+		String convertStreamToString = convertStreamToString(inputStream);
+		String unescapeForwardSlash = unescapeForwardSlash(convertStreamToString);
+		return unescapeForwardSlash;
+	}
+	
+	public String unescapeForwardSlash(String input) {
+		return input.replace("\\/", "/");
 	}
 	
 	protected String convertStreamToString(InputStream is) {
