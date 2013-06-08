@@ -27,17 +27,13 @@
         android:layout_alignTop="@+id/searchText"
         android:text="@string/search" />
 
-    <EditText
-        android:id="@+id/resultsText"
-        android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignRight="@+id/searchButton"
-        android:layout_below="@+id/searchButton"
-        android:ems="10"
-        android:inputType="textMultiLine" >
+    <ListView
+        android:id="@+id/searchResults"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/searchText"
+        android:layout_below="@+id/searchButton" >
 
-        <requestFocus />
-    </EditText>
+    </ListView>
 
 </RelativeLayout>
