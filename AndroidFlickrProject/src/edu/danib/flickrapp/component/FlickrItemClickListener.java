@@ -20,14 +20,14 @@ public class FlickrItemClickListener implements OnItemClickListener {
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-		Intent intent = createFlickrDetailIntent(parent, position);
+		SearchResult selectedItem = (SearchResult) parent.getItemAtPosition(position);
+		Intent intent = createFlickrDetailIntent(selectedItem);
 		parentActivity.startActivity(intent);
 	}
 
-	private Intent createFlickrDetailIntent(AdapterView<?> parent, int position) {
+	private Intent createFlickrDetailIntent(SearchResult searchResult) {
 		Intent intent = new Intent(parentActivity, FlickrDetailActivity.class);
-		SearchResult selectedItem = (SearchResult) parent.getItemAtPosition(position);
-		intent.putExtra(ExtraKeys.FLICKR_IMAGE_URL, selectedItem.getImgUrl());
+		intent.putExtra(ExtraKeys.FLICKR_IMAGE_URL, searchResult.getImgUrl());
 		return intent;
 	}
 
