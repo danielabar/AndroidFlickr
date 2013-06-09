@@ -7,5 +7,6 @@
     <string name="search">Search</string>
     <string name="searchHint">Search Flickr</string>
     <string name="flickrImage">Flickr Image</string>
+    <string name="txtFlickrClickHere"><u>View in Flickr</u></string>
 
 </resources>

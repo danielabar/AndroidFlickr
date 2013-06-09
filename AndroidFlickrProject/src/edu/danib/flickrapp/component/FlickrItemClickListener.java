@@ -28,6 +28,7 @@ public class FlickrItemClickListener implements OnItemClickListener {
 	private Intent createFlickrDetailIntent(SearchResult searchResult) {
 		Intent intent = new Intent(parentActivity, FlickrDetailActivity.class);
 		intent.putExtra(ExtraKeys.FLICKR_IMAGE_URL, searchResult.getImgUrl());
+		intent.putExtra(ExtraKeys.FLICKR_DETAIL_URL, searchResult.getFlickrUrl());
 		return intent;
 	}
 
