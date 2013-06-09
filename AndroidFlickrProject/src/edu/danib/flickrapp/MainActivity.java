@@ -14,7 +14,7 @@ import edu.danib.boilerplate.R;
 import edu.danib.flickrapp.model.SearchResult;
 
 public class MainActivity extends Activity {
-
+	
 	private EditText searchText;
     private Button searchButton;
     private ListView searchResults;
@@ -31,6 +31,7 @@ public class MainActivity extends Activity {
     	if (results != null && results.size() > 0) {
     		ListAdapter adapter = new ArrayAdapter<SearchResult>(this, android.R.layout.simple_list_item_1, results);
 			searchResults.setAdapter(adapter);
+			searchResults.setOnItemClickListener(new FlickrListItemClickListener(this));
     	} 
     }
 
