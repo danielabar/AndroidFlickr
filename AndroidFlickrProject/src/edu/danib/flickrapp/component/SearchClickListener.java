@@ -1,5 +1,7 @@
-package edu.danib.flickrapp;
+package edu.danib.flickrapp.component;
 
+import edu.danib.flickrapp.MainActivity;
+import edu.danib.flickrapp.task.SearchTask;
 import android.view.View;
 import android.widget.EditText;
 

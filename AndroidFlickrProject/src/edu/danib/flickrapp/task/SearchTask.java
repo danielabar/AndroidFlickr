@@ -1,7 +1,8 @@
-package edu.danib.flickrapp;
+package edu.danib.flickrapp.task;
 
 import java.util.List;
 
+import edu.danib.flickrapp.MainActivity;
 import edu.danib.flickrapp.model.SearchResult;
 import edu.danib.flickrapp.service.FlickrService;
 

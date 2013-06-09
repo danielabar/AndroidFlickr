@@ -1,17 +1,19 @@
-package edu.danib.flickrapp;
+package edu.danib.flickrapp.component;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import edu.danib.flickrapp.ExtraKeys;
+import edu.danib.flickrapp.FlickrDetailActivity;
 import edu.danib.flickrapp.model.SearchResult;
 
-public class FlickrListItemClickListener implements OnItemClickListener {
+public class FlickrItemClickListener implements OnItemClickListener {
 	
 	private Activity parentActivity;
 	
-	public FlickrListItemClickListener(Activity parentActivity) {
+	public FlickrItemClickListener(Activity parentActivity) {
 		super();
 		this.parentActivity = parentActivity;
 	}
