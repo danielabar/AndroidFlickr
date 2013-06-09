@@ -29,8 +29,9 @@ public class MainActivity extends Activity {
 
     public void showResults(List<SearchResult> results) {
     	if (results != null && results.size() > 0) {
-    		ListAdapter adapter = new ArrayAdapter<SearchResult>(this, android.R.layout.simple_list_item_1, results);
-			searchResults.setAdapter(adapter);
+    		ListAdapter searchResultsListAdapter = 
+    				new ArrayAdapter<SearchResult>(this, android.R.layout.simple_list_item_1, results);
+			searchResults.setAdapter(searchResultsListAdapter);
 			searchResults.setOnItemClickListener(new FlickrListItemClickListener(this));
     	} 
     }
